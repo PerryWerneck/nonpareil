@@ -104,7 +104,7 @@ factor		: '(' expr ')'  { $$ = $2; }
 			    }
 			  else
 			    {
-			      if (pass == 2)
+			      if (pass != PASS_INITIAL)
 				error ("undefined symbol '%s'\n", $1);
 			      $$ = 0;
 			    }
